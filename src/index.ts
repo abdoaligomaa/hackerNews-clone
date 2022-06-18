@@ -1,10 +1,13 @@
-import express from 'express'
+import { ApolloServer } from "apollo-server";
 
-const app=express()
+// 1
+import { schema } from "./schema";
+export const server = new ApolloServer({
+    schema,
+});
 
-app.get('/',(req,res)=>{
-    res.send('how are you and hellow world')
-})
-
-app.listen(3000,()=>console.log('server is running...........')
-)
+const port = 3000;
+// 2
+server.listen({port}).then(({ url }) => {
+    console.log(`🚀  Server ready at ${url}`);
+});
