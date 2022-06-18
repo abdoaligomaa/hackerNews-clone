@@ -48,7 +48,7 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Query: { // field return type
-    ok: boolean; // Boolean!
+    all_links: NexusGenRootTypes['link'][]; // [link!]!
   }
   link: { // field return type
     description: string; // String!
@@ -59,7 +59,7 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Query: { // field return type name
-    ok: 'Boolean'
+    all_links: 'link'
   }
   link: { // field return type name
     description: 'String'

@@ -3,7 +3,7 @@
 
 
 type Query {
-  ok: Boolean!
+  all_links: [link!]!
 }
 
 type link {
